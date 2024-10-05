@@ -1,0 +1,22 @@
+<?php
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+//Writing a function to implement hook help
+function palindrome_checker_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.palindrome_checker':
+      return \Drupal::translation()->translate('This is a module that helps you check whether a word is a palindrome.');
+  }
+}
+
+//Function for hook_theme and provide the theme for the palindrome_checker output
+function palindrome_checker_theme($existing, $type, $theme, $path) {
+  return [
+    'palindrome_checker' => [
+      'variables' => ['message' => NULL],
+      'template' => 'palindrome-checker',
+    ],
+  ];
+}
+

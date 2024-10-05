@@ -1,0 +1,10 @@
+<h1>Palindrome Checker</h1>
+<form action="/palindrome" method="GET">
+  <label for="word">Enter a word to check:</label>
+  <input type="text" id="word" name="word" required>
+  <button type="submit">Check</button>
+</form>
+
+{% if message %}
+  <p>{{ message }}</p>
+{% endif %}
